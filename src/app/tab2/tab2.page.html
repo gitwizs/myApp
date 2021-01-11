@@ -1,0 +1,103 @@
+<ion-header [translucent]="true" color="new">
+  <ion-toolbar color="new">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+     My Tickets
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true" color="new">
+<ion-card style="padding: 0px;margin-bottom: 1px;background-image: url(../../assets/selam.svg);background-repeat: no-repeat;background-position: bottom;background-repeat: repeat-x;" mode="ios">
+  <ion-grid style="padding: 0px;margin: 0px;" >
+    <ion-row style="padding: 0px;margin-bottom: 0px;">
+      <ion-col size="12" style="background-color:rgb(247, 245, 245);justify-content: center;text-align: center;padding: 15px;margin-bottom:-10px;">
+        <ion-icon style="font-size:22px;vertical-align: bottom;border-right:0px solid rgb(172, 170, 170); padding-right: 5px;" src="../../assets/selam.svg"></ion-icon>
+        <span style="color:rgb(211, 9, 9); font-size:15px; font-weight: bold;font-family:Font Awesome 5 Free;"> SELAM BUS </span>
+      </ion-col>
+        <ion-col style="padding: 0px;">
+          <div class="half-circle" style="float:left;"></div>
+      <div class="half-circle-2" style="float:right;"></div>
+        </ion-col>
+      </ion-row>
+      
+      <ion-row style="border-bottom:1px solid lightgray; padding:10px;">
+        <ion-col style="text-align: left;">
+          <span class="header-title">FROM</span>
+          <h1 class="header" style="margin-bottom:5px;"><strong>ADDX</strong></h1>
+        </ion-col>
+        <ion-col  color="new" style="text-align: center;">
+          &nbsp;<br/>
+          <ion-icon name="arrow-forward-outline" size="large" color="new"></ion-icon>
+        </ion-col>
+        <ion-col style="text-align: right;">
+          <span class="header-title">TO</span>
+          <h1 class="header" style="margin-bottom:5px;"><strong>MQX</strong></h1>
+        </ion-col>
+      </ion-row>
+      <ion-row class="no-padding"> 
+        <ion-col size="12"> <span class="header-title">PASSENGER</span>
+          <h2 class="header" style="margin-bottom: 0px;">ABEL GEBRE SELASSIE</h2> 
+                 </ion-col>
+      </ion-row>
+      <ion-row class="no-padding">
+        <ion-col style="text-align: left;">
+          <span class="header-title">Departure</span>
+          <h2 class="header" style="margin-bottom: 0px;">12:00AM</h2  >
+        </ion-col>
+        <ion-col style="text-align: center;">
+          &nbsp;<br/>
+         
+        </ion-col>
+        <ion-col style="text-align: right;">
+          <span class="header-title">Arrival</span>
+          <h2 class="header" style="margin-bottom: 0px;">12:00PM</h2>
+        </ion-col>
+      </ion-row>
+      
+      <ion-row class="no-padding">
+        <ion-col style="text-align: left;">
+          <span class="header-title">Date</span>
+          <h2 class="header" style="margin-bottom: 0px;">14 JAN 2020</h2  >
+        </ion-col>
+        <ion-col style="text-align: right;">
+          <span class="header-title">Seats</span>
+          <h2 class="header" style="margin-bottom: 0px;">L11</h2>
+        </ion-col>
+      </ion-row>
+      <ion-row class="no-padding" style="margin-left:10px;padding-left:0px;margin-right:10px;padding-right:0px; border-bottom: 3px dashed lightgray;">
+        <ion-col style="text-align: left;margin-bottom:-10px;">
+          <span class="header-title">Travel No.</span>
+          <h2 class="header" style="margin-bottom: 0px;">BX001</h2>
+        </ion-col>
+        <ion-col style="text-align: right;">
+          <span class="header-title">BUS NO.</span>
+          <h2 class="header" style="margin-bottom: 0px;">S001</h2>
+        </ion-col>
+        <ion-col size="12" style="padding: 0px;margin-bottom:-20px;">
+          <div class="half-circle" style="float:left;margin-left:-10px;width:15px;height:30px;"></div>
+          <div class="half-circle-2" style="float:right;margin-left:-10px;width:15px;height:30px;margin-right:-10px;"></div>
+        </ion-col>
+       
+      </ion-row>
+      <ion-row>
+        <ion-col style="padding:10px;text-align: center;justify-content: center;">
+          <ngx-barcode [bc-width]="2" [bc-font]="" [bc-height]="60" [bc-value]="value" [bc-display-value]="true"></ngx-barcode>
+         </ion-col>
+        <ion-col size="12">
+          
+        </ion-col>
+      </ion-row>
+      
+      </ion-grid>
+</ion-card>
+<div style="text-align: center;margin-bottom: 10px;">
+  <ion-icon size="large" style="vertical-align:text-bottom;" name="download-outline"></ion-icon>
+   <span class="header-title" style="font-size: 16px;"> Save Ticket</span> &nbsp;
+   <ion-icon size="large" style="vertical-align:text-bottom;" name="share-social-outline"></ion-icon>
+   <span class="header-title" style="font-size: 16px;"> Share friend</span>
+   
+</div>
+
+</ion-content>

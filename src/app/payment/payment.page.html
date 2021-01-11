@@ -1,0 +1,51 @@
+<ion-header color="new">
+  <ion-toolbar color="new" style="justify-content: center;text-align: center;">
+    <ion-title>Payment</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar color="new">
+    <div style="text-align: center;">Choose a Method </div>
+  <h2 style="color: pink;justify-content: center;text-align: center;"> 
+     Total 400<span style="font-weight: bold;font-size:15px;">ETB</span>
+    </h2>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-grid style="height:70%;max-height:70%; overflow-y: scroll;">
+  <ion-row >
+    <ion-col size="12" style="color:lightgray;"><strong>CASH METHOD</strong> </ion-col>
+    <ion-col size="12" *ngFor="let pay of payments" >
+     <ion-card button no-lines mode="ios"  [ngStyle]="{'box-shadow':selected === pay.id ? ' 2px 2px 10px green' : '' }" (click)="select(pay.id)"  style="padding:10px;margin-top:0px;margin-bottom:0px;" >
+      <ion-item  lines="none" >
+        <ion-icon size="large" [src]="'../../assets/'+pay.id+'.svg'" slot="start"></ion-icon>
+        <ion-label class="lable-content" no-lines><strong>{{ pay.name }}</strong></ion-label>
+        <ion-icon name="checkmark-circle-outline" slot="end" color="new" style="margin-right:-10px;"  [ngStyle]="{'display':selected === pay.id ? '' : 'none' }"></ion-icon>
+      </ion-item>
+     </ion-card> 
+    </ion-col>
+  </ion-row>
+</ion-grid>
+<ion-grid >
+  <ion-row >
+    <ion-col size="12" style="color:lightgray;"><strong>eBANKING METHOD</strong> </ion-col>
+  </ion-row>
+  <ion-row style="overflow-x: scroll;" class="row flex-row flex-nowrap" >
+    <ion-col size="3" *ngFor="let epay of epayments" >
+     <ion-card button   no-lines mode="ios" style="width:fit-content;padding:10px;margin-top:0px;margin-bottom:0px;"  [ngStyle]="{'box-shadow':selected === epay.id ? ' 2px 2px 10px green' : '' }" (click)="select(epay.id)">
+      <ion-item  lines="none" style="text-align: center;">
+        <ion-icon size="large" [src]="'../../assets/'+epay.id+'.svg'" slot=""></ion-icon><br/>
+        </ion-item>
+      <div class="lable-content" no-lines style="text-align: center;"><strong>{{ epay.name }}</strong></div>
+     </ion-card> 
+    </ion-col>
+  </ion-row>
+</ion-grid>
+</ion-content>
+<ion-footer class="ion-no-border">
+  <ion-toolbar no-border> 
+    <ion-button shape="round" expand="full" color="new" [routerLink]="['/paymentinfo']"><strong>&nbsp; Add Payment &nbsp;</strong></ion-button>
+  </ion-toolbar>
+</ion-footer>

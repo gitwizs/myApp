@@ -1,0 +1,78 @@
+<ion-header>
+  <ion-toolbar color="new" class="ion-no-border">
+    <ion-title>Passenger</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar color="new" style="text-align: center;">
+    <ion-icon slot="end" size="large" name="person-circle-outline"></ion-icon> <span> Fill Personal Info </span>
+    
+    <ion-icon slot="end" style="color:#fff;" name="information-circle-outline" size="large"></ion-icon>
+  <span style="color: pink;"><strong>Seat L11</strong></span>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+<ion-grid>
+  <ion-row>
+    <ion-col size="12" > <p>
+      <span class="header">Contact Information</span>
+    </p>
+        <mat-form-field appearance="outline" class="full-width-field"  style="height:50px;">
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="@gmail.com">
+          <mat-icon matSuffix><ion-icon  size="large"  name="at-outline"></ion-icon></mat-icon>
+        </mat-form-field><br/>
+
+        <mat-form-field appearance="outline" class="full-width-field">
+          <mat-label>Phone</mat-label>
+          <input matInput placeholder="09 777 777">
+          <mat-icon matSuffix><ion-icon size="large" name="phone-portrait-outline"></ion-icon></mat-icon>
+    
+        </mat-form-field>
+     
+    </ion-col>
+  </ion-row>
+</ion-grid>
+</ion-card>
+<ion-card>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" > 
+        <p>
+        <span class="header">Passenger</span>
+         </p>
+          <mat-form-field appearance="outline" class="full-width-field"  style="height:50px;">
+            <mat-label>Full Name</mat-label>
+            <input matInput placeholder="@gmail.com">
+            <mat-icon matSuffix><ion-icon  size="large"  name="person-outline"></ion-icon></mat-icon>
+          </mat-form-field><br/>
+  
+          <mat-form-field appearance="outline" class="half-width-field" style="margin-right:3px;">
+            <mat-label>Age</mat-label>
+            <input matInput placeholder="20">
+            <mat-icon matSuffix><ion-icon size="large" name="today-outline"></ion-icon></mat-icon>
+      
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="half-width-field"> 
+            <mat-label>Gender</mat-label>
+            <mat-select>
+              <mat-option value="option">Male</mat-option>
+              <mat-option value="option">Female</mat-option>
+            </mat-select>
+            <mat-hint align="end"> <ion-icon name="male-outline"></ion-icon>Male <ion-icon name="female-outline"></ion-icon> Female</mat-hint>
+          </mat-form-field>
+          
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  </ion-card>
+  
+</ion-content>
+<ion-footer class="ion-no-border">
+  <ion-toolbar no-border> 
+    <ion-button shape="round" expand="full" color="new" [routerLink]="['/travelinfo']"><strong>&nbsp; Payment &nbsp;</strong></ion-button>
+  </ion-toolbar>
+</ion-footer>

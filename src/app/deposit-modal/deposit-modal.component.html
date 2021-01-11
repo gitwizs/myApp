@@ -1,0 +1,23 @@
+
+  <ion-header>
+    <p></p>
+   <ion-toolbar>
+    <ion-buttons slot="end">
+    <ion-button (click)="dismissModal()">
+        Close
+    </ion-button>
+    </ion-buttons>
+    <ion-searchbar animated></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+      <mat-divider></mat-divider>
+  <ion-item button *ngFor="let city of cities" (click)="dismissModal(city.name,city.value)" >
+    <ion-label>
+     <h2> {{ city.name }}</h2> 
+    </ion-label>
+    <ion-icon name="navigate-outline" slot="end"></ion-icon>
+  </ion-item>
+</ion-list>
+</ion-content>

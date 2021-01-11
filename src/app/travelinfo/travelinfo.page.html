@@ -1,0 +1,118 @@
+<ion-header color="new">
+  <ion-toolbar color="new">
+    <ion-title style="text-align: center;">Travel Summary</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+</ion-toolbar>
+<ion-toolbar color="new">
+<ion-grid color="new">
+  <ion-row color=new style="text-align: center;justify-content: center;">
+   <ion-col text-left size="3">
+    <div>
+    <h2 style="margin-bottom: 0px;font-weight: bold;"> ADDX </h2>
+    <span>12:00 AM</span>
+    </div>
+  </ion-col>
+  <ion-col size="6">
+    <div class="bg-image"></div>
+  </ion-col>
+  <ion-col text-right size="3">
+    <div>
+    <h2 style="margin-bottom: 0px;font-weight: bold;"> MQX </h2>
+    <span>12:00 PM</span>
+    </div>
+  </ion-col>
+ </ion-row>
+</ion-grid>
+</ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <ion-card button style="border-radius: 10px;margin-bottom: 0px;" mode="ios">
+  <ion-item >
+    <ion-icon src="../../assets/selam.svg" slot="start"  style="border:;padding:3px;border-radius: 25px;"></ion-icon>
+    <ion-label style="font-weight: bold;font-family: 'Nunito' sans-serif;">SELAM BUS LLC.</ion-label>
+    <span fill="outline" slot="end" ><strong >$400</strong></span>
+  </ion-item>
+  <ion-card-content style="padding: 0px;" mode="ios">
+    <ion-grid>
+        <ion-row style="padding:0px;">
+          <ion-col size="6">
+            <ion-icon name="star" align="left" color="new"></ion-icon> 5/5 
+    
+          </ion-col>
+          <ion-col size="2" style="text-align:right;margin:0px;">
+            
+          <ion-card button  style="padding:3px;padding:1px;margin:0px;text-align: center;">
+            <ion-icon name="wifi-outline"  color="new" style="font-size:20px;"></ion-icon></ion-card>
+          </ion-col>
+          <ion-col size="2" style="padding:3px;margin:0px;text-align: center;">
+          <ion-card button style="margin:0px; "><ion-icon   color="new" name="fast-food-outline" style="font-size:20px;"></ion-icon></ion-card>
+          </ion-col>
+          <ion-col size="2" style="padding:3px;margin:0px; vertical-align:center; text-align: center;">
+            <ion-card button style="margin:0px;"><ion-icon  align="right" color="new" name="battery-charging-outline" style="font-size:20px;"></ion-icon></ion-card>
+            </ion-col>
+        </ion-row>
+        </ion-grid>
+  </ion-card-content>
+</ion-card>
+<ion-grid style="justify-content: center;text-align: center;" mode="ios">
+  <ion-row>
+    <ion-col size="6">
+      <ion-card button class="non-space" mode="ios">
+        <ion-card-header>
+          <ion-card-subtitle>Bus Travel Number</ion-card-subtitle>
+          <ion-card-title  color="new">BX001</ion-card-title>
+        </ion-card-header>
+      </ion-card>
+    </ion-col>
+    <ion-col size="6">
+      <ion-card button class="non-space" mode="ios">
+        <ion-card-header>
+          <ion-card-subtitle>Passenger Seats</ion-card-subtitle>
+          <ion-card-title color="new">L11</ion-card-title>
+        </ion-card-header>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size="12" >
+      <ion-card button class="non-space" mode="ios" >
+        <ion-card-header>
+          <ion-card-subtitle>Departure</ion-card-subtitle>
+          <ion-card-title color="new">
+            <ion-grid>
+              <ion-row>
+                <ion-col size="6" style="border-right:1px solid lightgrey;">
+                   <div style="font-size:15px;">Sunday</div>
+                   <span style="font-size:46px;">14</span>
+                </ion-col>
+                <ion-col size="6">
+                  <div>
+                  JAN 2020 12:00AM
+                </div>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+             
+          </ion-card-title>
+        </ion-card-header>
+      </ion-card>
+    </ion-col>
+    <ion-col size="12">
+      <ion-card button style="border-radius: 10px;" class="non-space">
+        <ion-card-header>
+          <ion-card-subtitle>Arrival</ion-card-subtitle>
+          <ion-card-title color="new">Sunday 14 Jan 2020 12:00PM</ion-card-title>
+        </ion-card-header>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+</ion-content>
+<ion-footer class="ion-no-border" >
+  <ion-toolbar no-border> 
+    <ion-button shape="round" expand="full" color="new" [routerLink]="['/payment']"><strong>&nbsp; Proceed to Pay &nbsp;</strong></ion-button>
+  </ion-toolbar>
+</ion-footer>

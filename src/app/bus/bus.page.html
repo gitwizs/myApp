@@ -1,0 +1,136 @@
+<ion-header color="new">
+  <ion-toolbar color="new">
+    <ion-title style="text-align: center;">Search Result</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+</ion-toolbar>
+<ion-toolbar color="new">
+<ion-grid color="new">
+  <ion-row color=new style="text-align: center;justify-content: center;">
+   <ion-col text-left size="3">
+    <div>
+    <h2 style="margin-bottom: 0px;font-weight: bold;"> ADDX </h2>
+    <span> 12:00 AM </span>
+    </div>
+  </ion-col>
+  <ion-col size="6" style="padding: 0px; justify-content: center;text-align: center;">
+      <div style="display: none;">
+      <br/>
+      <svg viewBox="0 0 33 5" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="2" cy="2" fill="lightgray" r="1.1" stroke-width="0.5" stroke="lightgray"/>
+      <line x1="4" y1="2" x2="29" y2="2" stroke-width="0.5" stroke-linecap="round" stroke="white"
+      stroke-dasharray="1"/>
+      <circle stroke-width="0.5" fill="pink" cx="30" cy="2" r="1.1" stroke="pink"/>
+          </svg>
+      
+    <ion-icon src="../../assets/selam.svg" size="large" style="font-size:large;" style="display: none;"></ion-icon> 
+    <ion-icon name="location-outline" size="large" style="display: ;vertical-align: ;"></ion-icon>
+    <ion-icon name="ellipsis-horizontal-outline" size="large" style="display: none;"></ion-icon>
+    <strong style="letter-spacing: 100%;display:none;">- - - - - - - - - - - - - -</strong>
+    <ion-icon name="arrow-forward-outline" size="large" style="display: ;vertical-align: middle;"></ion-icon>
+    <ion-icon name="location-outline" size="large" style="display: none;"></ion-icon>
+  </div>
+  <div class="bg-image">
+    
+  </div> 
+  
+  </ion-col>
+  <ion-col text-right size="3">
+    <div>
+    <h2 style="margin-bottom: 0px;font-weight: bold;"> MQX </h2>
+    <span>12:00 PM</span>
+    </div>
+  </ion-col>
+ </ion-row>
+</ion-grid>
+</ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" style="background-color: #EDF2F3; text-transform:uppercase;">
+<section style="text-transform:uppercase;">
+  <ion-list style="background-color: #EDF2F3;">
+  <ion-card button *ngFor="let bus of Buses" style="border-radius: 10px;" [routerLink]="['/seat']" mode="ios">
+    <ion-item>
+      <ion-icon src="../../assets/selam.svg" slot="start"  style="border:;padding:3px;border-radius: 25px;"></ion-icon>
+      <ion-label style="font-weight: bold;color:#003;">{{bus.name}} Bus LLC.</ion-label>
+      <span fill="outline" slot="end" color="new"><strong >$400</strong></span>
+    </ion-item>
+    <ion-card-content style="padding: 0px;font-family:Font Awesome 5 Free;">
+      <ion-grid>
+        <ion-row style="text-align: center;justify-content: center;padding: 0px;">
+          <ion-col size="4" style="margin-bottom:0px;padding-bottom: 0px;border-bottom:1px solid lightgray ;border-right:1px solid lightgray ;">
+          
+            <span style="color:;display: none;">ADDX</span>
+            <h2 style="margin-bottom:0px; padding: 0px;">12:00 AM</h2>
+             <span style="font-size:12px;">Departure</span> 
+          </ion-col>
+          
+          <ion-col size="3" style="margin-bottom:0px; padding-top: 8px;color:lightgray; vertical-align:middle;border-bottom:1px solid lightgray ;">
+          
+            <ion-icon name="ellipsis-horizontal-outline" style="display: none;" size="large"></ion-icon>
+            <ion-icon name="arrow-forward-outline" style="display: none;" size="large"></ion-icon> 
+            <span style="border-bottom:1px solid lightgray;padding-bottom:3px;font-size:12px;"> 11hrs </span><br/>
+            <span style="font-size: 12px;">2 Stop</span>
+           <ion-icon name="location-outline" size="large" style="display: none;"></ion-icon>
+          </ion-col>
+          <ion-col size="4" style="margin-bottom:0px; padding: 0px;border-left:1px solid lightgray ;border-bottom:1px solid lightgray ;">
+            <span style="display: none;">MQX</span>
+            <h2 style="margin-bottom:0px; padding: 0px;">12:00 PM</h2>
+            <span style="font-size:12px;">Arrival</span>
+          </ion-col>
+          </ion-row>
+          <!---
+          <ion-row style="padding:0px;">
+            <ion-col size="2" class="ion-align-self-end" offset="6" style="margin:0px;">
+            <ion-card button  style="padding:1px;margin:0px;text-align: center;">
+              <ion-icon name="wifi-outline" color="new" style="font-size:20px;"></ion-icon></ion-card>
+            </ion-col>
+            <ion-col size="2" style="padding:3px;margin:0px;text-align: center;">
+            <ion-card button style="margin:0px; "><ion-icon color="new" name="fast-food-outline" style="font-size:20px;"></ion-icon></ion-card>
+            </ion-col>
+            <ion-col size="2" style="padding:3px;margin:0px; vertical-align:center; text-align: center;">
+              <ion-card button style="margin:0px;"><ion-icon color="new" name="battery-charging-outline" style="font-size:20px;"></ion-icon></ion-card>
+              </ion-col>
+          </ion-row>
+        -->
+        <ion-row style="padding:0px;">
+          <ion-col size="6">
+           <ion-button style="padding:0px;margin: 0px;height:17px;width:70px;" color="new"  > <ion-icon name="star" size="small" align="left"></ion-icon>&nbsp; 5/5 </ion-button>  
+    
+          </ion-col>
+          <ion-col size="2" style="text-align:right;margin:0px;">
+            
+          <ion-card button  style="padding:3px;padding:1px;margin:0px;text-align: center;">
+            <ion-icon name="wifi-outline"  color="new" style="font-size:20px;"></ion-icon></ion-card>
+          </ion-col>
+          <ion-col size="2" style="padding:3px;margin:0px;text-align: center;">
+          <ion-card button style="margin:0px; "><ion-icon   color="new" name="fast-food-outline" style="font-size:20px;"></ion-icon></ion-card>
+          </ion-col>
+          <ion-col size="2" style="padding:3px;margin:0px; vertical-align:center; text-align: center;">
+            <ion-card button style="margin:0px;"><ion-icon  align="right" color="new" name="battery-charging-outline" style="font-size:20px;"></ion-icon></ion-card>
+            </ion-col>
+        </ion-row>
+          </ion-grid>
+    </ion-card-content>
+  </ion-card>
+</ion-list>
+</section>
+<ion-fab vertical="bottom" horizontal="end" slot="fixed" color="new" style="text-align:center;justify-content: center;">
+  <ion-fab-button color="new" shape="round" ><ion-icon name="filter-outline"></ion-icon> </ion-fab-button>
+  <ion-fab-list side="top">
+    <ion-fab-button>
+      <ion-icon name="cash-outline"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button>
+      <ion-icon name="star-outline"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button>
+      A-Z
+    </ion-fab-button>
+  </ion-fab-list>
+</ion-fab>
+
+</ion-content>
+
+

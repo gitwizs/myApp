@@ -1,0 +1,39 @@
+.half-circle {
+    width: 10px;
+    height: 20px;
+    background-color: #3f00ff;
+       border: 0px solid#3f00ff;
+        border-top-right-radius: 110px;
+    border-bottom-right-radius: 110px;
+   
+}
+.half-circle-2 {
+    width: 10px;
+    height: 20px;
+    background-color: #3f00ff;
+       border: 0px solid#3f00ff;
+        border-top-left-radius: 110px;
+    border-bottom-left-radius: 110px;
+}
+.header {
+    padding:0px;
+    margin-top: 0px;
+    font-weight:600;
+    color:#000000;
+    font-family: 'Nunito', sans-serif;
+    
+}
+
+.header-title{
+    font-weight: 500;
+    color:lightgray;
+   text-transform: uppercase;
+   font-family:Font Awesome 5 Free;
+   //margin-bottom:0px;
+}
+.no-padding {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    padding-top:0px;
+}

@@ -1,0 +1,54 @@
+<ion-header mode="ios" color="new">
+  <ion-toolbar color="new">
+    <ion-title>Payment Information</ion-title>
+    <ion-icon name="information-circle-outline" size="large" slot="end"></ion-icon>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    
+  </ion-toolbar>
+  <ion-toolbar color="new" style="text-align: center;color:pink;font-weight: bold;margin-top:0px;">
+    TRANSFER VIA CBE 
+  </ion-toolbar>
+</ion-header>
+
+<ion-content mode="ios">
+  <div class="container">
+<div class="info-container">
+ 
+  <p>
+   The deadline for payment of ticket is <strong>1 hour</strong>.Incase of non payment ticket until expiration date, the order will automatically canceled.
+   Confirmation info is sent via <strong> SMS & EMAIL</strong> within 30 Minute if its not <u> Contact us </u>. 
+  </p>
+</div>
+</div>
+
+<div class="content">
+  <div style="text-align: center;"><br/>
+  Total Payable Amount
+  <h2 style="font-weight: bold;"> 400<span style="font-size:14px;">ETB</span></h2>
+  </div>
+  <div style="text-align: center;margin-top:15px;margin-bottom:5px;"> <strong>INSTRUCTION</strong></div>
+  <ion-card style="margin-top:0px;">
+    <div style="background-color:purple;font-weight:bold;padding:10px;color:white;">
+      COMMERCIAL BANK OF ETHIOPIA
+    </div>
+    
+      <ion-grid>
+        <ion-row>
+                    <ion-col style="text-align: left;">
+            <span > Dear Customer make deposit of total amount of payment to the following account via your chosen Bank and make sure you Fill <strong>'Reason'</strong><br/>
+              Bank : <strong> COMMERCIAL BANK OF ETHIOPIA </strong><br/>
+              Account: <strong> EASYMART </strong><br/> Account Number:<strong> 777</strong> <br/>
+              Reason : <strong>BX001124</strong>
+
+          </span></ion-col>
+        </ion-row>
+      </ion-grid>
+      <div style="padding-right:10px;font-size:10px;text-align: right;">ISSUED 24 JAN 20 ,12:00pm</div>
+  </ion-card>
+</div>
+</ion-content>
+<ion-footer style="text-align: center;padding:10px;">
+  <ion-button shape="round" expand="full" color="new" [routerLink]="['/tabs/tab2']"> Done </ion-button>
+</ion-footer>

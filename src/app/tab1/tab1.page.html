@@ -1,0 +1,188 @@
+<ion-header >
+  <ion-toolbar color="new">
+    <ion-title>
+      TripWays
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-router-outlet id="main"></ion-router-outlet>
+    <ion-icon name="notifications-outline" style="font-size:24px;" slot="end"></ion-icon>
+  </ion-toolbar>
+  <ion-toolbar color=new>
+    <ion-segment value="1">
+      <ion-segment-button value="1" (click)="trip('1')">
+        ONE WAY
+      </ion-segment-button>
+      <ion-segment-button value="2" (click)="trip('2')">
+        ROUND TRIP 
+      </ion-segment-button>
+      <ion-segment-button value="3" (click)="trip('3')">
+        MULTI-CITY
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+  </ion-header>
+  <ion-menu side="start" menuId="first" contentId="main">
+    <ion-header>
+      <ion-toolbar color="new">
+        
+        <ion-item color="new" style="padding-top:10px;padding-bottom:10px;">
+          <ion-avatar style="height: 50px;width:50px;" color="new" slot="start">
+            <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+          </ion-avatar>
+          <ion-label style="font-family: 'Nunito',sans-serif;font-size:18px;font-weight:600;">Sign In Or Create Account</ion-label>
+        </ion-item>
+        <ion-item color="new" style="display: none;">
+          Go Anywhere ,Book everything
+        </ion-item>
+      </ion-toolbar>
+      
+    </ion-header>
+    <ion-content style="padding:7px;">
+      <ion-list>
+        <ion-card  no-lines mode="ios" class="slide-menu-card" mode="ios" >
+          <ion-list lines="none">
+            <ion-item> <ion-icon slot="start" name="information-circle-outline"></ion-icon>About us <ion-icon slot="end" name="chevron-forward-outline"></ion-icon></ion-item>
+            <ion-item><ion-icon slot="start" name="star-outline"></ion-icon>Rate us <ion-icon slot="end" name="chevron-forward-outline"></ion-icon></ion-item>
+        
+          </ion-list>
+       </ion-card> 
+        
+        <ion-card  no-lines mode="ios" class="slide-menu-card" mode="ios" >
+          <ion-list lines="none">
+            <ion-item> 
+              <ion-icon slot="start" name="language-outline"></ion-icon>Language <ion-icon slot="end" name="chevron-forward-outline"></ion-icon></ion-item>
+          </ion-list>
+       </ion-card> 
+        <ion-card  no-lines mode="ios" class="slide-menu-card" mode="ios" >
+          <ion-list lines="none">
+          <ion-item>FAQs <ion-icon slot="end" name="chevron-forward-outline"></ion-icon></ion-item>
+          <ion-item>Terms and Conditions  <ion-icon slot="end" name="chevron-forward-outline"></ion-icon></ion-item>
+          <ion-item>Privacy Policy<ion-icon slot="end" name="chevron-forward-outline"></ion-icon></ion-item>
+        </ion-list>
+       </ion-card> 
+          
+          <ion-item>
+            <ion-grid>
+              <ion-row>
+                <ion-col style="text-align: center;font-size:24px;">
+                  <ion-icon color="new" name="logo-facebook"></ion-icon>
+                  <ion-icon color="new" name="logo-twitter"></ion-icon>
+                  <ion-icon color="new" name="logo-linkedin"></ion-icon>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+        </ion-item>
+        <div style="text-align: center;justify-content: center;"> Version 1.0 <br/><img src="../../assets/Tripways.svg"/></div>
+        
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+<ion-content [fullscreen]="true">
+
+  <ion-grid style="background-color: #EDF2F3;">
+ <ion-row color=new style="text-align: center;justify-content: center;">
+  <ion-col size="12" style="padding-bottom: 0px;margin-bottom: 1px;">
+    <p style="margin-bottom:0px;font-size:large;display: none;">
+      <strong>Where you want to go.</strong>
+   
+    <ion-icon color="new" style="font-size:24px;font-weight: lighter;" name="bus-outline"></ion-icon>
+    <ion-icon color="new" style="font-size:32px;font-weight: lighter;" name="bus-outline"></ion-icon>
+    <ion-icon color="new" style="font-size:64px;font-weight: lighter;" name="bus-outline"></ion-icon>
+    <ion-icon color="new" style="font-size:32px;font-weight: lighter;" name="bus-outline"></ion-icon>
+    <ion-icon color="new" style="font-size:24px;font-weight: lighter;" name="bus-outline"></ion-icon>
+   
+    </p>
+  <div class="slide-menu">
+    <ion-grid >
+        <ion-row style="overflow-x: scroll;" class="row flex-row flex-nowrap" >
+        <ion-col size="4" *ngFor="let items of menus">
+         <ion-card  button no-lines mode="ios" class="menu-card" mode="ios" >
+            <ion-icon size="large" color="new" [name]="items.icon" slot=""></ion-icon><br/>
+          <div class="lable-content" no-lines style="text-align: center;"><strong>{{ items.item }}</strong>
+          </div>
+         </ion-card> 
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <h2 >Book Your Next Travel</h2>
+  </div>
+      <app-explore-container style="background-color: #EDF2F3; display: none;" name="Where you want to go."></app-explore-container>
+    </ion-col>
+</ion-row>
+</ion-grid>
+<div class="center-align" style="background-color: #EDF2F3;">
+    <ion-grid >
+      <ion-row>
+        <ion-col size="12" offset="">
+        <ion-card mode="ios" style="border-radius: 15px;margin-top: 0px;">
+                    <ion-card-content>
+                     <form (ngSubmit)="logForm()">
+            <p style="margin-bottom:0px;">
+              <mat-form-field appearance="outline" [style.width.%]="100" style="height:60px;" >
+                <mat-label >Departure</mat-label>
+                <input matInput class="mat-input" required placeholder="From"  value="{{cityData.city1}}" (click)="openModal('1')">
+                <mat-icon  matSuffix><ion-icon size="large" color="new" name="navigate-outline"></ion-icon></mat-icon>
+               
+              </mat-form-field>      
+            </p>
+                  
+            <p>
+              <mat-form-field appearance="outline" [style.width.%]="100" floatLabel="auto" >
+                <mat-label>Destination</mat-label>
+                <input matInput placeholder="To" class="mat-input" required  value="{{cityData.city2}}" (click)="openModal('2')" > 
+                <mat-icon matSuffix><ion-icon size="large" color="new" name="location-outline"></ion-icon></mat-icon>
+               
+              </mat-form-field>
+            </p >
+          
+            <p>
+              <mat-form-field appearance="outline"  [style.width.%]="49" style="height:50px;" >
+                <mat-label>Departure</mat-label>
+                <input matInput [matDatepicker]="picker">
+                <mat-datepicker-toggle matSuffix [for]="picker">
+                  <mat-icon matDatepickerToggleIcon><ion-icon size="large" name="calendar-outline"></ion-icon></mat-icon>
+                </mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field> 
+              <mat-divider [vertical]="true">&nbsp;</mat-divider>
+               <mat-form-field appearance="outline"  [style.width.%]="49" slot="end" style="height:50px;" >
+                <mat-label>Return</mat-label>
+                <input matInput [matDatepicker]="picker2" required [disabled]="twoDisabled">
+                <mat-datepicker-toggle matSuffix [for]="picker2">
+                  <mat-icon matDatepickerToggleIcon><ion-icon size=large name="calendar-outline"></ion-icon></mat-icon>
+                </mat-datepicker-toggle>
+                  <mat-datepicker #picker2></mat-datepicker>
+              </mat-form-field>
+            </p>
+            <p>
+              <mat-form-field appearance="outline" [style.width.%]="65" style="height: 60px;">
+                <mat-label>Passengers</mat-label> 
+                <input matInput placeholder="To" value={{item}}> 
+                <mat-icon matSuffix><ion-icon size="large" color="new" name="people-outline"></ion-icon></mat-icon>
+               </mat-form-field>
+               <mat-divider [vertical]="true"> &nbsp;</mat-divider>
+               <span [style.width.%]="29" style="text-align: center;justify-content: center;">
+               <button mat-mini-fab color="success" (click)="incrementQty()">
+                <mat-icon><ion-icon name="person-add-outline"></ion-icon></mat-icon>
+              </button>
+              <button mat-mini-fab color="warn"  (click)="decrementQty()">
+                <mat-icon><ion-icon name="person-remove-outline"></ion-icon></mat-icon>
+              </button> 
+            </span>
+              </p>
+          </form>
+          
+  </ion-card-content>
+        </ion-card>
+        <div style="margin-left:15px;margin-right:15px;margin-top: 1px;">
+        <ion-button fill="solid" size="" color="new" expand=full shape=round slot="" [routerLink]="['/bus']">Search</ion-button>
+      </div>
+      </ion-col>
+        
+      </ion-row>
+      </ion-grid>
+    </div>  
+   
+</ion-content>
