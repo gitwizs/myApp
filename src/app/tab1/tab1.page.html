@@ -7,8 +7,12 @@
       <ion-menu-button autoHide="false"></ion-menu-button>
     </ion-buttons>
     <ion-router-outlet id="main"></ion-router-outlet>
-    <ion-icon name="notifications-outline" style="font-size:24px;" slot="end"></ion-icon>
-  </ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-icon name="notifications-outline" style="font-size:24px;" (click)="presentPopover($event)"></ion-icon>
+      <span color="danger" style="display:inline-block; z-index:1000;margin-top:-10px;margin-left: -10px;border-radius:20px; border:2px solid #3f00ff;padding:5px;background-color: red;"></span>
+
+    </ion-buttons>
+    </ion-toolbar>
   <ion-toolbar color=new>
     <ion-segment value="1">
       <ion-segment-button value="1" (click)="trip('1')">
@@ -26,12 +30,13 @@
   <ion-menu side="start" menuId="first" contentId="main">
     <ion-header>
       <ion-toolbar color="new">
-        
+        <br/>
         <ion-item color="new" style="padding-top:10px;padding-bottom:10px;">
           <ion-avatar style="height: 50px;width:50px;" color="new" slot="start">
             <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
           </ion-avatar>
-          <ion-label style="font-family: 'Nunito',sans-serif;font-size:18px;font-weight:600;">Sign In Or Create Account</ion-label>
+          <ion-label style="font-family: 'Nunito',sans-serif;font-size:18px;font-weight:600;">Sign In | Create Account<br/>
+            <span style="font-size:11px;font-weight:500;">Enjoy Your Mile Gifts & Offers!</span></ion-label>
         </ion-item>
         <ion-item color="new" style="display: none;">
           Go Anywhere ,Book everything
@@ -100,13 +105,14 @@
         <ion-col size="4" *ngFor="let items of menus">
          <ion-card  button no-lines mode="ios" class="menu-card" mode="ios" >
             <ion-icon size="large" color="new" [name]="items.icon" slot=""></ion-icon><br/>
-          <div class="lable-content" no-lines style="text-align: center;"><strong>{{ items.item }}</strong>
+          <div class="lable-content" no-lines style="text-transform: uppercase ;" ><strong>{{ items.item }}</strong>
           </div>
          </ion-card> 
         </ion-col>
       </ion-row>
     </ion-grid>
-    <h2 >Book Your Next Travel</h2>
+    <h2 style="color:#EDF2F3;">Book Your Next Travel</h2>
+    <h2>&nbsp;</h2>
   </div>
       <app-explore-container style="background-color: #EDF2F3; display: none;" name="Where you want to go."></app-explore-container>
     </ion-col>
@@ -119,19 +125,19 @@
         <ion-card mode="ios" style="border-radius: 15px;margin-top: 0px;">
                     <ion-card-content>
                      <form (ngSubmit)="logForm()">
-            <p style="margin-bottom:0px;">
-              <mat-form-field appearance="outline" [style.width.%]="100" style="height:60px;" >
+            <p style="margin-bottom:0px;" (click)="openModal('1')">
+              <mat-form-field appearance="outline" [style.width.%]="100" style="height:65px;border-left: 2px solid limegreen;border-radius: 10px;" >
                 <mat-label >Departure</mat-label>
-                <input matInput class="mat-input" required placeholder="From"  value="{{cityData.city1}}" (click)="openModal('1')">
+                <input matInput class="mat-input" required placeholder="From"  value="{{cityData.city1}}" >
                 <mat-icon  matSuffix><ion-icon size="large" color="new" name="navigate-outline"></ion-icon></mat-icon>
                
               </mat-form-field>      
             </p>
                   
-            <p>
-              <mat-form-field appearance="outline" [style.width.%]="100" floatLabel="auto" >
+            <p (click)="openModal('2')">
+              <mat-form-field appearance="outline" [style.width.%]="100" floatLabel="auto"  style="border-left: 2px solid lightcoral;border-radius: 10px;" >
                 <mat-label>Destination</mat-label>
-                <input matInput placeholder="To" class="mat-input" required  value="{{cityData.city2}}" (click)="openModal('2')" > 
+                <input matInput placeholder="To" class="mat-input" required  value="{{cityData.city2}}"  > 
                 <mat-icon matSuffix><ion-icon size="large" color="new" name="location-outline"></ion-icon></mat-icon>
                
               </mat-form-field>
@@ -178,6 +184,7 @@
         </ion-card>
         <div style="margin-left:15px;margin-right:15px;margin-top: 1px;">
         <ion-button fill="solid" size="" color="new" expand=full shape=round slot="" [routerLink]="['/bus']">Search</ion-button>
+       
       </div>
       </ion-col>
         

@@ -1,20 +1,22 @@
-<ion-header [translucent]="true" color="new">
+<ion-header color="new">
   <ion-toolbar color="new">
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="home"></ion-back-button>
-    </ion-buttons>
-    <ion-title>
+    <ion-title style="font-family: 'Nunito',sans-serif;">
      My Tickets
     </ion-title>
+    <ion-buttons slot="start">
+      <ion-icon name="home-outline" style="font-size: 20px;vertical-align: middle;" ></ion-icon>     
+    </ion-buttons>
+    <ion-icon name="download-outline" style="font-size: 21px;margin-right: 10px;" slot="end"></ion-icon>
+    <ion-icon name="share-social-outline" style="font-size: 21px;" slot="end"></ion-icon>
   </ion-toolbar>
 </ion-header>
 <ion-content [fullscreen]="true" color="new">
-<ion-card style="padding: 0px;margin-bottom: 1px;background-image: url(../../assets/selam.svg);background-repeat: no-repeat;background-position: bottom;background-repeat: repeat-x;" mode="ios">
+<ion-card style="padding: 0px;margin-top:0px; margin-bottom: 1px;background-image: url(../../assets/selam.svg);background-repeat: no-repeat;background-position: bottom;background-repeat: repeat-x;" mode="ios">
   <ion-grid style="padding: 0px;margin: 0px;" >
     <ion-row style="padding: 0px;margin-bottom: 0px;">
       <ion-col size="12" style="background-color:rgb(247, 245, 245);justify-content: center;text-align: center;padding: 15px;margin-bottom:-10px;">
         <ion-icon style="font-size:22px;vertical-align: bottom;border-right:0px solid rgb(172, 170, 170); padding-right: 5px;" src="../../assets/selam.svg"></ion-icon>
-        <span style="color:rgb(211, 9, 9); font-size:15px; font-weight: bold;font-family:Font Awesome 5 Free;"> SELAM BUS </span>
+        <span style="color:rgb(211, 9, 9); font-size:15px; font-weight: bold;font-family:'Nunito',sans-serif;"> SELAM BUS </span>
       </ion-col>
         <ion-col style="padding: 0px;">
           <div class="half-circle" style="float:left;"></div>
@@ -37,9 +39,10 @@
         </ion-col>
       </ion-row>
       <ion-row class="no-padding"> 
-        <ion-col size="12"> <span class="header-title">PASSENGER</span>
-          <h2 class="header" style="margin-bottom: 0px;">ABEL GEBRE SELASSIE</h2> 
-                 </ion-col>
+        <ion-col size="12" style="margin-bottom: 0px;">
+          <span class="header-title"><strong>PASSENGER</strong> </span>     
+          <h2 class="header" style="margin-bottom: 0px;font-weight: 300;">ABEL GEBRE SELASSIE</h2> 
+            </ion-col>
       </ion-row>
       <ion-row class="no-padding">
         <ion-col style="text-align: left;">

@@ -28,7 +28,7 @@ export class DepositModalComponent implements OnInit {
   ];
   ngOnInit() {
     //this.type = '${datas}';
-    alert(this.datas);
+    //alert(this.datas);
   }
  dismissModal(city :string,value : string) :void {    
    //if(value == "1")

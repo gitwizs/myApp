@@ -33,6 +33,10 @@ const routes: Routes = [
   {
     path: 'account',
     loadChildren: () => import('./account/account.module').then( m => m.AccountPageModule)
+  },
+  {
+    path: 'popover',
+    loadChildren: () => import('./popover/popover.module').then( m => m.PopoverPageModule)
   }
 ];
 @NgModule({

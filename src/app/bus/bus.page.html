@@ -52,11 +52,11 @@
   <ion-list style="background-color: #EDF2F3;">
   <ion-card button *ngFor="let bus of Buses" style="border-radius: 10px;" [routerLink]="['/seat']" mode="ios">
     <ion-item>
-      <ion-icon src="../../assets/selam.svg" slot="start"  style="border:;padding:3px;border-radius: 25px;"></ion-icon>
-      <ion-label style="font-weight: bold;color:#003;">{{bus.name}} Bus LLC.</ion-label>
+      <ion-icon src="../../assets/selam.svg" slot="start"  style="padding:3px;border-radius: 25px;"></ion-icon>
+      <ion-label style="font-weight: bold;color:#003;font-family:'Nunito',sans-serif;">{{bus.name}} Bus LLC.</ion-label>
       <span fill="outline" slot="end" color="new"><strong >$400</strong></span>
     </ion-item>
-    <ion-card-content style="padding: 0px;font-family:Font Awesome 5 Free;">
+    <ion-card-content style="padding: 0px;font-family:'Nunito',sans-serif;">
       <ion-grid>
         <ion-row style="text-align: center;justify-content: center;padding: 0px;">
           <ion-col size="4" style="margin-bottom:0px;padding-bottom: 0px;border-bottom:1px solid lightgray ;border-right:1px solid lightgray ;">

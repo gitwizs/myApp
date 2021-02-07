@@ -15,11 +15,19 @@
     border: 2px soild gray;
 }
 .slide-menu {
-    padding-left:20px;
-    padding-right: 20px;
+   // padding-left:20px;
+   // padding-right: 20px;
     //border: 1px dotted;
     font-family: 'Nunito', sans-serif;
-    margin-bottom: 0px;
+    //margin-bottom: 0px;
+    margin:-20px;
+    background-color:#3f00ff;
+     padding-left:10%;
+      padding-right:10%;
+      padding-top:5px;
+      margin-bottom:-50px; 
+      border-bottom-left-radius: 20%;
+    border-bottom-right-radius: 20%;
 }
 .menu-card {
     text-align:center;
@@ -55,6 +63,101 @@ mat-form-field input {
 .slide-menu-card {
     
 }
+ion-title{
+    font-family: 'Nunito',sans-serif;
+}
 ion-avatar {
     border:2px solid #fff;
+}
+.lable-content {
+    text-align: center;
+    font-weight: 300;
+    font-family: 'Nunito',sans-serif;
+}
+//@bell
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20px;
+  position: relative;
+}
+main .notification {
+  position: relative;
+  width: 10em;
+  height: 20px;
+  border: 1px dotted;
+}
+main .notification svg {
+  width: 10em;
+  height: 2em;
+}
+main .notification svg > path {
+  fill: #FFFFFF;
+}
+main .notification--bell {
+  animation: bell 2.2s linear infinite;
+  transform-origin: 50% 0%;
+}
+main .notification--bellClapper {
+  animation: bellClapper 2.2s 0.1s linear infinite;
+}
+main .notification--num {
+  position: absolute;
+  top: 0%;
+  left: 60%;
+  font-size: 1 rem;
+  border-radius: 50%;
+  width: 1 em;
+  height: 1 em;
+  background-color: #FF4C13;
+  border: 6px solid #5079b1;
+  color: #FFFFFF;
+  text-align: center;
+  line-height: 1 em;
+  animation: notification 3.2s ease;
+}
+
+@keyframes bell {
+  0%, 25%, 75%, 100% {
+    transform: rotate(0deg);
+  }
+  40% {
+    transform: rotate(2deg);
+  }
+  45% {
+    transform: rotate(-2deg);
+  }
+  55% {
+    transform: rotate(1deg);
+  }
+  60% {
+    transform: rotate(-1deg);
+  }
+}
+@keyframes bellClapper {
+  0%, 25%, 75%, 100% {
+    transform: translateX(0);
+  }
+  40% {
+    transform: translateX(-0.15em);
+  }
+  45% {
+    transform: translateX(0.15em);
+  }
+  55% {
+    transform: translateX(-0.1em);
+  }
+  60% {
+    transform: translateX(0.1em);
+  }
+}
+@keyframes notification {
+  0%, 25%, 75%, 100% {
+    opacity: 1;
+  }
+  30%, 70% {
+    opacity: 0;
+  }
 }

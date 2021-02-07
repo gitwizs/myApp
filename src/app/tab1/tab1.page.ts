@@ -2,6 +2,27 @@ import { Component,Input } from '@angular/core';
 import { MenuController, ModalController } from '@ionic/angular';
 import { stringify } from 'querystring';
 import { DepositModalComponent } from '../deposit-modal/deposit-modal.component';
+import { PopoverController } from '@ionic/angular';
+import { PopoverPage } from '../popover/popover.page';
+
+/* import { Storage } from '@capacitor/storage';
+
+const setName = async () => {
+  await Storage.set({
+    key: 'name',
+    value: 'Max',
+  });
+};
+
+const checkName = async () => {
+  const { value } = await Storage.get({ key: 'name' });
+
+  alert(`Hello ${value}!`);
+};
+
+const removeName = async () => {
+  await Storage.remove({ key: 'name' });
+}; */
 
 @Component({
   selector: 'app-tab1',
@@ -10,7 +31,7 @@ import { DepositModalComponent } from '../deposit-modal/deposit-modal.component'
 })
 export class Tab1Page {
 
-  constructor(private menu: MenuController,private modalCtr :ModalController) { }
+  constructor(private menu: MenuController,private modalCtr :ModalController,public popoverController: PopoverController) { }
   //variable Declaration
   city: String;
   type : string;
@@ -39,6 +60,14 @@ export class Tab1Page {
    else if(type == '3') {
     this.twoDisabled = false;
    }
+  }
+  async presentPopover(ev: any) {
+    const popover = await this.popoverController.create({
+      component: PopoverPage,
+      event: ev,
+      translucent: false
+    });
+    return await popover.present();
   }
 
   async openModal(type : string){
