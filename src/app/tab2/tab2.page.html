@@ -1,93 +1,105 @@
-<ion-header color="new">
-  <ion-toolbar color="new">
+<ion-header color="new" mode="ios">
+  <ion-toolbar color="new" mode="ios">
     <ion-title style="font-family: 'Nunito',sans-serif;">
      My Tickets
     </ion-title>
-    <ion-buttons slot="start">
-      <ion-icon name="home-outline" style="font-size: 20px;vertical-align: middle;" ></ion-icon>     
+    <ion-buttons slot="start">  
     </ion-buttons>
-    <ion-icon name="download-outline" style="font-size: 21px;margin-right: 10px;" slot="end"></ion-icon>
-    <ion-icon name="share-social-outline" style="font-size: 21px;" slot="end"></ion-icon>
+    <ion-icon name="download-outline" size="large" style="margin-right: 10px;" slot="end"></ion-icon>
   </ion-toolbar>
+  <ion-toolbar color=new>
+    <ion-segment value="1" mode="ios" style="font-family: 'Nunito',sans-serif;font-weight: bold;">
+      <ion-segment-button value="1" style="padding-left:10px;padding-right:10px;">
+       <strong> &nbsp;&nbsp; Upcomming &nbsp;&nbsp; </strong>  
+      </ion-segment-button>
+      <ion-segment-button value="2">
+      <strong> Past  </strong>
+      </ion-segment-button>
+    </ion-segment>
+</ion-toolbar>
 </ion-header>
 <ion-content [fullscreen]="true" color="new">
-<ion-card style="padding: 0px;margin-top:0px; margin-bottom: 1px;background-image: url(../../assets/selam.svg);background-repeat: no-repeat;background-position: bottom;background-repeat: repeat-x;" mode="ios">
+  <!-- background-image: url(../../asets/selam.svg); -->
+<ion-card [@visibilityChanged]="visibility" style="opacity: 0;padding: 0px;margin-top:0px; margin-bottom: 1px;background-repeat: no-repeat;background-position: bottom;background-repeat: repeat-x;" mode="ios">
   <ion-grid style="padding: 0px;margin: 0px;" >
     <ion-row style="padding: 0px;margin-bottom: 0px;">
-      <ion-col size="12" style="background-color:rgb(247, 245, 245);justify-content: center;text-align: center;padding: 15px;margin-bottom:-10px;">
-        <ion-icon style="font-size:22px;vertical-align: bottom;border-right:0px solid rgb(172, 170, 170); padding-right: 5px;" src="../../assets/selam.svg"></ion-icon>
-        <span style="color:rgb(211, 9, 9); font-size:15px; font-weight: bold;font-family:'Nunito',sans-serif;"> SELAM BUS </span>
-      </ion-col>
-        <ion-col style="padding: 0px;">
-          <div class="half-circle" style="float:left;"></div>
-      <div class="half-circle-2" style="float:right;"></div>
+      
+        <ion-col size="12" color="new" style="padding-bottom: 0px;">
+          <div class="company-theme" style="background-image: url(../../assets/selam.svg);background-color:rgb(211, 9, 9);">&nbsp; {{ singleDoc.buscompany }} BUS </div>
         </ion-col>
       </ion-row>
       
-      <ion-row style="border-bottom:1px solid lightgray; padding:10px;">
+      <ion-row style="border-bottom:2px dashed lightgray; padding:10px;">
         <ion-col style="text-align: left;">
-          <span class="header-title">FROM</span>
-          <h1 class="header" style="margin-bottom:5px;"><strong>ADDX</strong></h1>
+          <span class="header-title">DEPARTURE</span>
+          <h1 class="header" style="margin-bottom:5px;"><strong>{{ Departure }}</strong></h1>
+          <span class="header-title">12:00PM</span>
         </ion-col>
         <ion-col  color="new" style="text-align: center;">
           &nbsp;<br/>
           <ion-icon name="arrow-forward-outline" size="large" color="new"></ion-icon>
         </ion-col>
         <ion-col style="text-align: right;">
-          <span class="header-title">TO</span>
-          <h1 class="header" style="margin-bottom:5px;"><strong>MQX</strong></h1>
+          <span class="header-title">ARRIVAL</span>
+          <h1 class="header" style="margin-bottom:5px;"><strong>{{ Arrival }}</strong></h1>
+          <span class="header-title">12:00PM</span>
         </ion-col>
+        <ion-col size="12"></ion-col>
       </ion-row>
       <ion-row class="no-padding"> 
-        <ion-col size="12" style="margin-bottom: 0px;">
-          <span class="header-title"><strong>PASSENGER</strong> </span>     
-          <h2 class="header" style="margin-bottom: 0px;font-weight: 300;">ABEL GEBRE SELASSIE</h2> 
+        <ion-col size="8" style="margin-bottom: 0px;">
+          <span class="header-title">PASSENGER</span>     
+          <h2 class="header-3" style=" margin-bottom: 0px;">{{ singleDoc.name }}</h2> 
             </ion-col>
+            <ion-col size="4" style="margin-bottom: 0px;text-align: right;">
+              <span class="header-title">Price</span>     
+              <h2 class="header-3" style=" margin-bottom: 0px;text-align: right;">{{ singleDoc.total }}ETB</h2> 
+                </ion-col>
       </ion-row>
-      <ion-row class="no-padding">
-        <ion-col style="text-align: left;">
-          <span class="header-title">Departure</span>
-          <h2 class="header" style="margin-bottom: 0px;">12:00AM</h2  >
-        </ion-col>
-        <ion-col style="text-align: center;">
-          &nbsp;<br/>
-         
-        </ion-col>
-        <ion-col style="text-align: right;">
-          <span class="header-title">Arrival</span>
-          <h2 class="header" style="margin-bottom: 0px;">12:00PM</h2>
-        </ion-col>
-      </ion-row>
-      
       <ion-row class="no-padding">
         <ion-col style="text-align: left;">
           <span class="header-title">Date</span>
-          <h2 class="header" style="margin-bottom: 0px;">14 JAN 2020</h2  >
+          <h2 class="header-3">SUNDAY 14 JAN </h2  >
         </ion-col>
         <ion-col style="text-align: right;">
           <span class="header-title">Seats</span>
-          <h2 class="header" style="margin-bottom: 0px;">L11</h2>
+          <h2 class="header-3">{{ singleDoc.seats }}</h2>
         </ion-col>
       </ion-row>
-      <ion-row class="no-padding" style="margin-left:10px;padding-left:0px;margin-right:10px;padding-right:0px; border-bottom: 3px dashed lightgray;">
+      <ion-row class="no-padding" style="margin-left:10px;padding-left:0px;margin-right:10px;padding-right:0px; border-bottom: 2px dashed lightgray;">
         <ion-col style="text-align: left;margin-bottom:-10px;">
-          <span class="header-title">Travel No.</span>
-          <h2 class="header" style="margin-bottom: 0px;">BX001</h2>
+          <span class="header-title">BOARDING LOCATION</span>
+          <h2 class="header-3">MESKEL SQUARE</h2>
         </ion-col>
         <ion-col style="text-align: right;">
-          <span class="header-title">BUS NO.</span>
-          <h2 class="header" style="margin-bottom: 0px;">S001</h2>
+          <span class="header-title">BUS</span>
+          <h2 class="header-3">{{ singleDoc.busnumber }}</h2>
         </ion-col>
         <ion-col size="12" style="padding: 0px;margin-bottom:-20px;">
-          <div class="half-circle" style="float:left;margin-left:-10px;width:15px;height:30px;"></div>
-          <div class="half-circle-2" style="float:right;margin-left:-10px;width:15px;height:30px;margin-right:-10px;"></div>
+          <div class="half-circle" style="float:left;margin-left:-10px;width:12px;height:24px;"></div>
+          <div class="half-circle-2" style="float:right;margin-left:-10px;width:12px;height:24px;margin-right:-10px;"></div>
         </ion-col>
        
       </ion-row>
+      <ion-row class="barcode-header"> 
+        <ion-col size="4">
+          <span class="header-title-2" style="font-weight:300;">Travel</span><br/>
+          <span class="header-2">SB-BX001</span>
+        </ion-col>
+        <ion-col size="4">
+          <span class="header-title-2">Bus</span> <br/>
+          <span class="header-2">007</span>
+        </ion-col>
+        <ion-col size="4">
+          <span class="header-title-2">Boarding</span><br/>
+          <span class="header-2">10:00PM</span>
+        </ion-col>
+      </ion-row>
       <ion-row>
-        <ion-col style="padding:10px;text-align: center;justify-content: center;">
-          <ngx-barcode [bc-width]="2" [bc-font]="" [bc-height]="60" [bc-value]="value" [bc-display-value]="true"></ngx-barcode>
-         </ion-col>
+        <ion-col style="padding:10px;padding-top:0px;text-align: center;justify-content: center;">
+          <ngx-barcode [bc-width]="2" [bc-font]="" [bc-height]="60" [bc-value]="value" [bc-display-value]="false"></ngx-barcode>
+        <span style="font-family: 'Nunito',sans-serif;font-weight:600;">SCAN QR CARD TO CHECK IN</span> 
+        </ion-col>
         <ion-col size="12">
           
         </ion-col>
@@ -95,12 +107,15 @@
       
       </ion-grid>
 </ion-card>
-<div style="text-align: center;margin-bottom: 10px;">
+<div style="text-align: center;margin-bottom: 10px;" [@visibilityChanged]="visibility">
   <ion-icon size="large" style="vertical-align:text-bottom;" name="download-outline"></ion-icon>
-   <span class="header-title" style="font-size: 16px;"> Save Ticket</span> &nbsp;
+   <span class="header-title" style="font-size: 16px;" (click)="TakeScreenShot()"> Save Ticket</span> &nbsp;
    <ion-icon size="large" style="vertical-align:text-bottom;" name="share-social-outline"></ion-icon>
-   <span class="header-title" style="font-size: 16px;"> Share friend</span>
+   <span class="header-title" style="font-size: 16px;"> Share friend </span>
    
 </div>
-
+<div [@visibilityChanged]="!visibility" class="no-ticket">
+  <ion-icon name="ticket-outline" style="font-size:64px;"></ion-icon>
+  <h2>No Upcomming Trips ? </h2>
+  <span style="color:gray;">Not Booked? Get it easy ,pay in two taps,and check here for your tickets</span>  </div>
 </ion-content>

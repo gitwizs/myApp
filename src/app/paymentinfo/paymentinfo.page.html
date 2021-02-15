@@ -1,24 +1,28 @@
 <ion-header mode="ios" color="new">
   <ion-toolbar color="new">
     <ion-title>Payment Information</ion-title>
-    <ion-icon name="information-circle-outline" size="large" slot="end"></ion-icon>
+    <ion-icon name="information-circle-outline" size="large" slot="end" (click)="createDatabase()"></ion-icon>
     <ion-buttons slot="start">
       <ion-back-button defaultHref="home"></ion-back-button>
     </ion-buttons>
     
   </ion-toolbar>
   <ion-toolbar color="new" style="text-align: center;color:pink;font-weight: bold;margin-top:0px;">
-    TRANSFER VIA CBE 
+    TRANSFER VIA {{ Bank.name }}
   </ion-toolbar>
 </ion-header>
+
+<ion-toolbar color="danger" [style.display]="isConnected ? 'none' : 'block'"> 
+  <div style="text-align: center;justify-content: center;font-size:12px;">No internet Connection</div>
+</ion-toolbar>
 
 <ion-content mode="ios">
   <div class="container">
 <div class="info-container">
  
   <p>
-   The deadline for payment of ticket is <strong>1 hour</strong>.Incase of non payment ticket until expiration date, the order will automatically canceled.
-   Confirmation info is sent via <strong> SMS & EMAIL</strong> within 30 Minute if its not <u> Contact us </u>. 
+   Payment for ticket MUST be made within <strong>1 hour</strong>.Incase of non-payment ticket expires automatically. 
+   Confirmation will be sent via SMS & EMAIL within 30 Minute. 
   </p>
 </div>
 </div>
@@ -26,29 +30,45 @@
 <div class="content">
   <div style="text-align: center;"><br/>
   Total Payable Amount
-  <h2 style="font-weight: bold;"> 400<span style="font-size:14px;">ETB</span></h2>
+  <h2 style="font-weight: bold;"> {{ Total }} <span style="font-size:14px;">ETB</span></h2>
   </div>
   <div style="text-align: center;margin-top:15px;margin-bottom:5px;"> <strong>INSTRUCTION</strong></div>
   <ion-card style="margin-top:0px;">
-    <div style="background-color:purple;font-weight:bold;padding:10px;color:white;">
-      COMMERCIAL BANK OF ETHIOPIA
+    <div [style.background-color]="theme" style="font-weight:bold;padding:10px;color: rgb(255, 255, 255);">
+      {{ Bank.name }}
     </div>
     
       <ion-grid>
         <ion-row>
                     <ion-col style="text-align: left;">
-            <span > Dear Customer make deposit of total amount of payment to the following account via your chosen Bank and make sure you Fill <strong>'Reason'</strong><br/>
-              Bank : <strong> COMMERCIAL BANK OF ETHIOPIA </strong><br/>
-              Account: <strong> EASYMART </strong><br/> Account Number:<strong> 777</strong> <br/>
-              Reason : <strong>BX001124</strong>
-
-          </span></ion-col>
+            <span > Dear Customer make deposit of total amount of payment to the following account via your chosen method and make sure you Fill <strong>'Reason'<br/>&nbsp;</strong>
+          </span>
+          <p>
+            <mat-form-field appearance="outline">
+              <mat-label>Name Of Bank</mat-label>
+              <input matInput value="Commercial Bank of ETH" readonly>
+            </mat-form-field>
+          </p>
+          <p>
+            <mat-form-field appearance="outline">
+              <mat-label>Account Number</mat-label>
+              <input matInput value="777" readonly>
+            </mat-form-field>
+          </p>
+          <p>
+            <mat-form-field appearance="outline">
+              <mat-label>Reason</mat-label>
+              <input matInput value="SB-BX001" readonly>
+            </mat-form-field>
+          </p>
+        </ion-col>  
         </ion-row>
       </ion-grid>
-      <div style="padding-right:10px;font-size:10px;text-align: right;">ISSUED 24 JAN 20 ,12:00pm</div>
+      <div style="padding-right:10px;font-size:10px;text-align: right;text-transform: uppercase;">ISSUED {{ Date_issued }}</div>
   </ion-card>
+  RESULTS {{ ID }} 
 </div>
 </ion-content>
 <ion-footer style="text-align: center;padding:10px;">
-  <ion-button shape="round" expand="full" color="new" [routerLink]="['/tabs/tab2']"> Done </ion-button>
+  <ion-button shape="round" expand="full" [color]="isConnected ? 'new' : 'medium'" [disabled]="!isConnected" (click)="store()"> Done </ion-button>
 </ion-footer>

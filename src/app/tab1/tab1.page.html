@@ -7,14 +7,17 @@
       <ion-menu-button autoHide="false"></ion-menu-button>
     </ion-buttons>
     <ion-router-outlet id="main"></ion-router-outlet>
-    <ion-buttons slot="end">
-      <ion-icon name="notifications-outline" style="font-size:24px;" (click)="presentPopover($event)"></ion-icon>
+    <ion-buttons slot="end" (click)="presentPopover($event)">
+      <ion-icon name="notifications-outline" style="font-size:24px;"></ion-icon>
       <span color="danger" style="display:inline-block; z-index:1000;margin-top:-10px;margin-left: -10px;border-radius:20px; border:2px solid #3f00ff;padding:5px;background-color: red;"></span>
 
     </ion-buttons>
     </ion-toolbar>
+    <ion-toolbar color="danger" [style.display]="isConnected ? 'none' : 'block' "> 
+      <div style="text-align: center;justify-content: center;font-size:12px;">No internet Connection</div>
+    </ion-toolbar>
   <ion-toolbar color=new>
-    <ion-segment value="1">
+    <ion-segment value="1" style="font-family: 'Nunito' ,sans-serif;">
       <ion-segment-button value="1" (click)="trip('1')">
         ONE WAY
       </ion-segment-button>
@@ -86,7 +89,8 @@
   </ion-menu>
 <ion-content [fullscreen]="true">
 
-  <ion-grid style="background-color: #EDF2F3;">
+<!-- background-color: #EDF2F3; -->
+  <ion-grid >
  <ion-row color=new style="text-align: center;justify-content: center;">
   <ion-col size="12" style="padding-bottom: 0px;margin-bottom: 1px;">
     <p style="margin-bottom:0px;font-size:large;display: none;">
@@ -103,9 +107,9 @@
     <ion-grid >
         <ion-row style="overflow-x: scroll;" class="row flex-row flex-nowrap" >
         <ion-col size="4" *ngFor="let items of menus">
-         <ion-card  button no-lines mode="ios" class="menu-card" mode="ios" >
-            <ion-icon size="large" color="new" [name]="items.icon" slot=""></ion-icon><br/>
-          <div class="lable-content" no-lines style="text-transform: uppercase ;" ><strong>{{ items.item }}</strong>
+         <ion-card  button no-lines mode="ios" class="menu-card" mode="ios">
+            <ion-icon size="large" style="color:#fff;" [name]="items.icon" slot=""></ion-icon><br/>
+          <div class="lable-content" no-lines style="text-transform: uppercase ;color:gray;" ><strong>{{ items.item }}</strong>
           </div>
          </ion-card> 
         </ion-col>
@@ -118,7 +122,8 @@
     </ion-col>
 </ion-row>
 </ion-grid>
-<div class="center-align" style="background-color: #EDF2F3;">
+<!-- background-color: #EDF2F3; -->
+<div class="center-align">
     <ion-grid >
       <ion-row>
         <ion-col size="12" offset="">
@@ -144,16 +149,16 @@
             </p >
           
             <p>
-              <mat-form-field appearance="outline"  [style.width.%]="49" style="height:50px;" >
+              <mat-form-field appearance="outline" [style.width.%]="49" style="height:50px;" >
                 <mat-label>Departure</mat-label>
-                <input matInput [matDatepicker]="picker">
+                <input matInput [matDatepicker]="picker" (dateChange)="changeDate('1',date.value);" style="font-size:16px;">
                 <mat-datepicker-toggle matSuffix [for]="picker">
                   <mat-icon matDatepickerToggleIcon><ion-icon size="large" name="calendar-outline"></ion-icon></mat-icon>
                 </mat-datepicker-toggle>
               <mat-datepicker #picker></mat-datepicker>
               </mat-form-field> 
               <mat-divider [vertical]="true">&nbsp;</mat-divider>
-               <mat-form-field appearance="outline"  [style.width.%]="49" slot="end" style="height:50px;" >
+               <mat-form-field appearance="outline" [style.width.%]="49" slot="end" style="height:50px;" >
                 <mat-label>Return</mat-label>
                 <input matInput [matDatepicker]="picker2" required [disabled]="twoDisabled">
                 <mat-datepicker-toggle matSuffix [for]="picker2">
@@ -183,8 +188,8 @@
   </ion-card-content>
         </ion-card>
         <div style="margin-left:15px;margin-right:15px;margin-top: 1px;">
-        <ion-button fill="solid" size="" color="new" expand=full shape=round slot="" [routerLink]="['/bus']">Search</ion-button>
-       
+          <!-- [routerLink]="['/bus']" -->
+        <ion-button fill="solid" size="" [color]="submit ? 'medium' : 'new'" expand=full shape=round slot="" disabled="{{submit}}" (click)="busSelection()" >Search</ion-button>
       </div>
       </ion-col>
         

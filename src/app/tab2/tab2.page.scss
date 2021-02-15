@@ -1,27 +1,47 @@
 .half-circle {
     width: 10px;
-    height: 20px;
+    height: 10px;
     background-color: #3f00ff;
        border: 0px solid#3f00ff;
-        border-top-right-radius: 110px;
-    border-bottom-right-radius: 110px;
+        border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
    
 }
 .half-circle-2 {
     width: 10px;
-    height: 20px;
+    height: 10px;
     background-color: #3f00ff;
        border: 0px solid#3f00ff;
-        border-top-left-radius: 110px;
-    border-bottom-left-radius: 110px;
+        border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
 }
 .header {
     padding:0px;
     margin-top: 0px;
-    font-weight:300;
+    font-weight:light;
     color:#000000;
     font-family: 'Nunito', sans-serif;
-    
+}
+.header-2 {
+    padding:0px;
+    margin-top: 0px;
+    font-weight:bold;
+    color:#000000;
+    font-family: 'Nunito', sans-serif;
+}
+.header-3 {
+    padding:0px;
+    margin-top: 0px;
+    font-weight:400;
+    color:#000000;
+    font-family: 'Nunito', sans-serif;
+    font-size:17px;
+    margin-bottom: 0px;
+}
+.barcode-header {
+    text-align: center;
+    justify-content: center;
+    margin-top:10px;
 }
 h2 {
     //font-size: 20px;
@@ -29,7 +49,15 @@ h2 {
 }
 .header-title{
     font-weight: 500;
-    color:lightgray;
+    color:gray;
+    font-weight: bold;
+   text-transform: uppercase;
+   font-family:'Nunito',sans-serif;
+   //margin-bottom:0px;
+}
+.header-title-2{
+    font-weight: 300;
+    color:gray;
    text-transform: uppercase;
    font-family:'Nunito',sans-serif;
    //margin-bottom:0px;
@@ -39,4 +67,22 @@ h2 {
     padding-right: 10px;
     padding-bottom: 5px;
     padding-top:0px;
+}
+.company-theme {
+    color:white;
+    font-family: 'Nunito',sans-serif;
+    font-size:12px;
+    border-radius: 2px;
+    text-transform: uppercase;
+}
+.no-ticket {
+text-align: center;
+justify-content: center;vertical-align: middle;
+position: absolute; 
+top: 30%;
+//left: 50%; 
+font-family: 'Nunito',sans-serif;
+text-align: center;
+width:100%;
+padding:10px;
 }

@@ -8,10 +8,13 @@
   <ion-toolbar color="new">
     <div style="text-align: center;">Choose a Method </div>
   <h2 style="color: pink;justify-content: center;text-align: center;"> 
-     Total 400<span style="font-weight: bold;font-size:15px;">ETB</span>
+     Total {{ Total }}<span style="font-weight: bold;font-size:15px;">ETB</span>
     </h2>
   </ion-toolbar>
 </ion-header>
+<ion-toolbar color="danger" [style.display]="isConnected ? 'none' : 'block' "> 
+  <div style="text-align: center;justify-content: center;font-size:12px;">No internet Connection</div>
+</ion-toolbar>
 
 <ion-content>
 <ion-grid style="height:70%;max-height:70%; overflow-y: scroll;">
@@ -33,8 +36,8 @@
     <ion-col size="12" style="color:lightgray;"><strong>eBANKING METHOD</strong> </ion-col>
   </ion-row>
   <ion-row style="overflow-x: scroll;" class="row flex-row flex-nowrap" >
-    <ion-col size="3" *ngFor="let epay of epayments" >
-     <ion-card button   no-lines mode="ios" style="width:fit-content;padding:10px;margin-top:0px;margin-bottom:0px;"  [ngStyle]="{'box-shadow':selected === epay.id ? ' 2px 2px 10px green' : '' }" (click)="select(epay.id)">
+    <ion-col *ngFor="let epay of epayments" >
+     <ion-card button   no-lines mode="ios" style="width:90px;padding:10px;margin-top:0px;margin-bottom:0px;margin-right:-17px;"  [ngStyle]="{'box-shadow':selected === epay.id ? ' 2px 2px 10px green' : '' }" (click)="select(epay.id)">
       <ion-item  lines="none" style="text-align: center;">
         <ion-icon size="large" [src]="'../../assets/'+epay.id+'.svg'" slot=""></ion-icon><br/>
         </ion-item>
@@ -46,6 +49,6 @@
 </ion-content>
 <ion-footer class="ion-no-border">
   <ion-toolbar no-border> 
-    <ion-button shape="round" expand="full" color="new" [routerLink]="['/paymentinfo']"><strong>&nbsp; Add Payment &nbsp;</strong></ion-button>
+    <ion-button shape="round" expand="full" [color]="isConnected ? 'new' : 'medium'" [disabled]="!isConnected" (click)="payment()"><strong>&nbsp; Add Payment &nbsp;</strong></ion-button>
   </ion-toolbar>
 </ion-footer>

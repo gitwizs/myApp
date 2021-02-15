@@ -25,3 +25,17 @@ color:rgb(255, 188, 5);
 span {
     font-family:'Nunito', sans-serif;
 }
+
+input {
+    font-family:'Nunito', sans-serif;
+    font-weight: bold;
+    width:100%;
+}
+mat-form-field {
+    height: 50px;
+    width:100%;
+}
+mat-label {
+    font-family:'Nunito', sans-serif;
+        text-transform: uppercase;
+}

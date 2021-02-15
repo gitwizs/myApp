@@ -7,6 +7,9 @@ import { IonicModule } from '@ionic/angular';
 import { PaymentPageRoutingModule } from './payment-routing.module';
 
 import { PaymentPage } from './payment.page';
+import { Network } from '@ionic-native/network/ngx';
+import { FetchService } from "../api/fetch.service";
+
 
 @NgModule({
   imports: [
@@ -15,6 +18,7 @@ import { PaymentPage } from './payment.page';
     IonicModule,
     PaymentPageRoutingModule
   ],
-  declarations: [PaymentPage]
+  declarations: [PaymentPage],
+  providers: [FetchService,Network]
 })
 export class PaymentPageModule {}

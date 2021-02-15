@@ -13,7 +13,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { DepositModalComponent } from '../deposit-modal/deposit-modal.component';
-
+import { Network } from '@ionic-native/network/ngx';
+import { FetchService } from '../api/fetch.service';
 @NgModule({
   imports: [
     IonicModule,
@@ -27,8 +28,11 @@ import { DepositModalComponent } from '../deposit-modal/deposit-modal.component'
     MatInputModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    //Network,
    ],
+  providers: [FetchService,Network],
   declarations: [Tab1Page,DepositModalComponent],
-  entryComponents: [DepositModalComponent]
+  entryComponents: [DepositModalComponent],
+
 })
 export class Tab1PageModule {}

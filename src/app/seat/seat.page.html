@@ -6,6 +6,9 @@
       <ion-back-button defaultHref="home"></ion-back-button>
     </ion-buttons>
 </ion-toolbar>
+<ion-toolbar color="danger" [style.display]="isConnected ? 'none' : 'block'"> 
+  <div style="text-align: center;justify-content: center;font-size:12px;">No internet Connection</div>
+</ion-toolbar>
 <ion-toolbar color="new">
   <div style="text-align:center;color:pink;">Mon on 24th Dec 2020</div>
   <br/>
@@ -35,7 +38,8 @@
     <ion-grid color="pink">
       <ion-row color="danger-tint">
         <ion-col size="6" style="">
-          <div><strong>Your Selected Seats</strong></div>
+          <div><strong>Your Selected Seats</strong><br/>
+          {{ Total }} Seats left </div>
         </ion-col>
         <ion-col size="2"></ion-col>
         <ion-col size="4">
@@ -94,6 +98,6 @@
 
 <ion-footer class="ion-no-border">
   <ion-toolbar no-border> 
-    <ion-button shape="round" expand="full" color="new" [routerLink]="['/passenger']"><strong>&nbsp; Checkout &nbsp;</strong></ion-button>
+    <ion-button shape="round" expand="full" color="new" (click)="passenger();"><strong>&nbsp; Checkout &nbsp;</strong></ion-button>
   </ion-toolbar>
 </ion-footer>

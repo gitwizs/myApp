@@ -7,6 +7,8 @@ import { IonicModule } from '@ionic/angular';
 import { BusPageRoutingModule } from './bus-routing.module';
 
 import { BusPage } from './bus.page';
+import { Network } from '@ionic-native/network/ngx';
+import { FetchService } from "../api/fetch.service";
 
 @NgModule({
   imports: [
@@ -15,6 +17,7 @@ import { BusPage } from './bus.page';
     IonicModule,
     BusPageRoutingModule
   ],
-  declarations: [BusPage]
+  declarations: [BusPage],
+  providers : [FetchService,Network]
 })
 export class BusPageModule {}

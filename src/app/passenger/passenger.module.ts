@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule  } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
@@ -14,6 +14,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatSelectModule} from '@angular/material/select';
+import { Network } from '@ionic-native/network/ngx';
+import { FetchService } from "../api/fetch.service";
 
 
 @NgModule({
@@ -28,8 +30,11 @@ import {MatSelectModule} from '@angular/material/select';
     MatInputModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatSelectModule
+    MatSelectModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
-  declarations: [PassengerPage]
+  declarations: [PassengerPage],
+  providers : [Network,FetchService]
 })
 export class PassengerPageModule {}
